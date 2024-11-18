@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milestone-1</title>
-    <link rel="stylesheet" href="style.css">
-</head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Resume Builder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <h1>Dynamic Resume Builder by Hammad Abbasi</h1>
-    <form id="resumeform">
-       
-        <fieldset>
-            <legend>Personal Information</legend>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
+  <header>
+    <h1>Dynamic Resume Builder</h1>
+  </header>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+  <main>
+    <form id="resume-form">
+      <!-- Personal Info -->
+      <section id="personal-info">
+        <h2>Personal Information</h2>
+        <input type="text" id="name" placeholder="Full Name" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="text" id="phone" placeholder="Phone Number" required><br>
+        <input type="file" id="profile-image" accept="image/*"><br>
+      </section>
 
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required><br>
+      <!-- Education -->
+      <section id="education">
+        <h2>Education</h2>
+        <input type="text" id="degree" placeholder="Degree" required><br>
+        <input type="text" id="college" placeholder="College/University" required><br>
+        <input type="text" id="years" placeholder="Years (e.g., 2020-2023)" required><br>
+      </section>
 
-            <label for="profilePicture">Profile Picture:</label>
-            <input type="file" id="profilePicture" name="profilePicture" accept="image/*"><br>
-        </fieldset>
+      <!-- Work Experience -->
+      <section id="work-experience">
+        <h2>Work Experience</h2>
+        <input type="text" id="job-title" placeholder="Job Title" required><br>
+        <input type="text" id="company" placeholder="Company Name" required><br>
+        <input type="text" id="job-years" placeholder="Years of Experience (e.g., 2023-Present)" required><br>
+      </section>
 
-        <fieldset>
-            <legend>Education</legend>
-            <label for="education">Education:</label>
-            <textarea id="education" name="education" rows="4" required></textarea><br>
-        </fieldset>
+      <!-- Skills -->
+      <section id="skills-section">
+        <h2>Skills</h2>
+        <input type="text" id="skills" placeholder="Enter Skills (comma separated)" required><br>
+      </section>
+      
 
-        <fieldset>
-            <legend>Skills</legend>
-            <label for="skills">Skills:</label>
-            <textarea id="skills" name="skills" rows="4" required></textarea><br>
-        </fieldset>
-
-        <fieldset>
-            <legend>Experience</legend>
-            <label for="experience">Experience:</label>
-            <textarea id="experience" name="experience" rows="4" required></textarea><br>
-        </fieldset>
-
-        <button type="submit">Submit Details</button>
+      <button type="submit" id="generate-resume">Generate Resume</button>
     </form>
 
-    <div id="resumeOutput">
-        <!-- Resume will be generated below -->
-    </div>
+    <!-- Generated Resume -->
+    <section id="generated-resume">
+      <h2>Resume</h2>
+      <div id="resume-content"></div>
+    </section>
+  </main>
 
-    <script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
